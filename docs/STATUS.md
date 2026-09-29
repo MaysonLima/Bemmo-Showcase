@@ -1,75 +1,80 @@
-# Status de implementação — Vittae
+# Status de implementação — Bemmo
 
 Este documento resume o estado público do projeto sem expor o código-fonte privado.
 
-## Implementado
+Atualizado em 29/09/2026 após o rebrand Bemmo e a integração do fluxo profissional de agendamentos.
 
-### Frontend
+## Integrado de ponta a ponta
 
-- SPA em React/Vite;
-- rotas públicas e dashboard;
-- páginas de home, descoberta, perfil, agendamento, voucher e autenticação;
-- busca, filtros e ordenação sobre catálogo demonstrativo;
-- tratamento de estados vazios e rotas inválidas;
-- cuidados básicos de acessibilidade e responsividade;
-- integração real do frontend com os endpoints de autenticação.
+### Frontend + Backend
 
-### Backend
+- autenticação e sessão;
+- recuperação de senha e verificação de e-mail no produto, ainda sem provedor externo de entrega;
+- perfil profissional privado e página pública;
+- serviços profissionais;
+- disponibilidade semanal e exceções;
+- consulta pública de horários reserváveis;
+- booking público persistido;
+- gestão profissional de agendamentos;
+- transições de lifecycle como confirmação, cancelamento, conclusão e não comparecimento.
 
-- API Express independente;
-- configuração validada por ambiente;
-- health e readiness;
-- CORS, Helmet e rate limiting;
-- logging estruturado;
-- contrato consistente de sucesso/erro;
-- Prisma e PostgreSQL em ambiente de desenvolvimento;
-- migrations e validações de integridade;
-- suíte de testes sem exigir banco externo para os casos principais.
+## Backend implementado / frontend ainda pendente
 
-### Autenticação
-
-- cadastro;
-- login;
-- refresh de sessão;
-- logout;
-- logout global;
-- endpoint de sessão atual;
-- senha com Argon2id;
-- access token JWT;
-- refresh opaco em cookie HttpOnly;
-- rotação e revogação;
-- dashboard protegido no frontend;
-- restauração de sessão.
+- reagendamento;
+- CRM de clientes;
+- histórico e resumo do cliente;
+- financeiro;
+- avaliações;
+- moderação administrativa de avaliações.
 
 ## Parcial / demonstrativo
 
-As áreas abaixo possuem interface e/ou modelagem, mas ainda não representam uma operação completa de produção:
-
-- perfis e serviços;
-- favoritos;
-- agenda;
-- clientes;
-- financeiro;
-- planos;
-- avaliações;
-- voucher;
-- páginas institucionais e contatos.
+- marketplace público e busca sobre catálogo;
+- métricas da home;
+- vouchers;
+- páginas e fluxos que ainda não consomem seus módulos backend correspondentes.
 
 ## Planejado
 
-- recuperação de senha;
-- verificação de e-mail;
-- CRUDs e APIs de negócio;
-- persistência real do agendamento;
-- regras de concorrência e disponibilidade;
-- cancelamento e reagendamento;
 - pagamentos e assinaturas;
-- emissão e resgate transacional de vouchers;
+- vouchers comerciais transacionais;
 - notificações;
 - uploads;
+- provedor transacional externo de e-mail;
 - observabilidade de produção;
-- CI e ampliação dos testes E2E;
-- hospedagem pública do produto.
+- ambiente público de beta/produção.
+
+## Qualidade
+
+No fechamento atual do rebrand Bemmo, o projeto principal registra:
+
+- **139 testes frontend passando**;
+- **219 testes backend passando**;
+- build Vite de produção aprovado;
+- schema Prisma validado;
+- integrações selecionadas com Chromium e PostgreSQL/Neon.
+
+## Infraestrutura
+
+- PostgreSQL de desenvolvimento em Neon;
+- Prisma para modelagem e acesso ao banco;
+- health e readiness na API;
+- configuração Render estática existente, ainda sem deploy público desta etapa;
+- domínio **bemmo.com.br** registrado, ainda sem DNS/deploy público concluído.
+
+## Segurança e arquitetura
+
+Entre as decisões já incorporadas estão:
+
+- Argon2id para senhas;
+- access token JWT de curta duração;
+- refresh token opaco em cookie `HttpOnly`;
+- rotação e revogação de sessão;
+- CORS explícito e validação de origem;
+- rate limiting;
+- logs estruturados com redaction;
+- transações e locks em operações concorrentes;
+- dados pessoais fora de URLs nos fluxos de booking.
 
 ## Princípio de documentação
 
@@ -78,6 +83,7 @@ O projeto diferencia explicitamente:
 - **interface existente**;
 - **modelagem de banco existente**;
 - **backend implementado**;
-- **integração efetivamente operacional**.
+- **integração full stack operacional**;
+- **ambiente efetivamente em produção**.
 
-Uma tabela no banco ou uma tela no frontend não é apresentada como funcionalidade concluída se o fluxo completo ainda não existe.
+Uma tabela no banco, endpoint ou tela isolada não é apresentada como funcionalidade concluída quando o fluxo completo ainda não está integrado.

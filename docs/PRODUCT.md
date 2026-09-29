@@ -1,4 +1,4 @@
-# Produto — Vittae
+# Produto — Bemmo
 
 ## Problema
 
@@ -6,7 +6,7 @@ Profissionais autônomos do bem-estar frequentemente distribuem sua operação e
 
 ## Proposta
 
-A Vittae busca centralizar essa experiência em uma plataforma voltada tanto à presença digital quanto à organização da operação.
+A Bemmo busca centralizar essa experiência em uma plataforma voltada tanto à presença digital quanto à organização da operação.
 
 A visão do produto inclui:
 
@@ -22,9 +22,11 @@ A visão do produto inclui:
 
 ## MVP e evolução
 
-A primeira etapa priorizou a construção da experiência e dos principais fluxos de interface. Em seguida, a arquitetura passou a receber uma fundação backend, banco relacional e autenticação real.
+O projeto começou pela experiência e pelos principais fluxos de interface. Em seguida, recebeu backend próprio, PostgreSQL e autenticação real.
 
-A próxima evolução é substituir cada fluxo demonstrativo por uma implementação full stack persistida, mantendo a interface clara sobre o que já é real e o que ainda é simulação.
+Hoje, perfil profissional, serviços, disponibilidade, slots reserváveis, booking público e gestão profissional de agendamentos já possuem integração full stack. Reagendamento, CRM, histórico de clientes, financeiro e avaliações já têm backend implementado, enquanto suas interfaces ainda estão em evolução.
+
+Marketplace real, vouchers comerciais, pagamentos, notificações, uploads e ambiente público de produção permanecem etapas futuras.
 
 ## Modelo de negócio explorado
 
@@ -36,3 +38,11 @@ Hipóteses de monetização consideradas no produto:
 - participação em operações como vouchers.
 
 Essas hipóteses fazem parte da visão do produto e não representam cobrança operacional ativa no estado atual do projeto.
+
+## Identidade
+
+Nome do produto: **Bemmo**.
+
+Domínio registrado: **bemmo.com.br**.
+
+O domínio ainda não representa um ambiente público de produção nesta etapa.

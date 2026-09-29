@@ -1,6 +1,6 @@
 # Contribuição
 
-Este é um repositório público de apresentação da Vittae. O código-fonte principal é mantido em um repositório privado.
+Este é um repositório público de apresentação da Bemmo. O código-fonte principal é mantido em um repositório privado.
 
 Sugestões sobre produto, documentação, UX e arquitetura são bem-vindas e podem ser abertas por meio de issues.
 
